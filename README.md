@@ -35,3 +35,10 @@ Handling collisions:
         - you only store one piece of information at each index, if you have a collision/duplicate, then you search through the array and find the next empty spot
         - allows you to avoid nested data structures 
         - however you have to decide what you are going to do when you run out of room in your array
+
+Big O:
+    - with good hash functions
+    - insertion O(1)
+    - deletion O(1)
+    - access (using a given key to find a value) O(1)
+    - searching O(n)
