@@ -25,6 +25,8 @@ class HashTable {
             // if there is nothing already at that index we need to put an empty array to deal with separate chaining
             this.keyMap[index] = []
         }
+        // note that this allows for you to submit duplicate keys
+        // most languages will overwrite the key with the new value, however that is not a concern with JS
         this.keyMap[index].push([key, value])
         // note the [] to build our nested array
     }
@@ -47,5 +49,40 @@ class HashTable {
         }
         return undefined
         // if we don't find anything
+    }
+
+    keys(){
+        // loop through the hash table and returns an array of keys in the table
+        let results = []
+        for (let i = 0; i < this.keyMap.length; i++){
+            if (this.keyMap[i]){
+                for (let j = 0; j < this.keyMap[i]; j++){
+                    // for sub arrays
+                    if (!results.includes(this.keyMap[i][j][0])){
+                        // handle duplicate values
+                        results.push(this.keyMap[i][j][0])
+                    }
+                }
+            }
+        }
+        return results
+    }
+
+    values(){
+        // loops through hash table and returns an array of values
+        // are you returning unique or duplicates? 
+        let results = []
+        for (let i = 0; i < this.keyMap.length; i++){
+            if (this.keyMap[i]){
+                for (let j = 0; j < this.keyMap[i]; j++){
+                    // for sub arrays
+                    if (!results.includes(this.keyMap[i][j][1])){
+                        // handle duplicate values
+                        results.push(this.keyMap[i][j][1])
+                    }
+                }
+            }
+        }
+        return results
     }
 }
