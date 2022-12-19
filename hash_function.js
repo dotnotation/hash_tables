@@ -38,3 +38,6 @@ function hash(key, arrayLength){
     }
     return total
 }
+
+// Problem:
+    // doesn't handle collisions 
