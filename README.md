@@ -27,5 +27,11 @@ What makes a good hash?
 	- deterministic, every time you put in the same input you get the same output
 
 Handling collisions:
+    - when you have a hash function it is inevitable that you will have data that will be assigned the same index especially with small arrays like in the example
     - separate chaining 
+        - you store pieces of data at the same spot/index in a more sophisticated data structure like a linked list or nested array
+            - this allows you to store multiple key-value pairs at the same index
     - linear probing
+        - you only store one piece of information at each index, if you have a collision/duplicate, then you search through the array and find the next empty spot
+        - allows you to avoid nested data structures 
+        - however you have to decide what you are going to do when you run out of room in your array
